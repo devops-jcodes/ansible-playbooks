@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks: 
+  - name: creating a file
+    file: 
+      path: /tmp/ansiblefile.txt
+      owner: ansible 
+      group: ansible
+      mode: 0777
+      state: touch
+...
+# if you dont specify owner or group, it will not throw any error
+# but it will assign the owner whomever is execting the anisble scripts

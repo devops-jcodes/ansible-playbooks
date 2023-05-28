@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks: 
+  - name: Create a symbolic link
+    file:
+     force: true
+     src: /home/ansible/softlink.txt    # if no path, it will create in current dir
+     dest: /tmp/softlink.txt
+     owner: ansible
+     group: ansible
+     state: link
+...
+
